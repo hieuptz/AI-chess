@@ -3,6 +3,9 @@ sys.path.append('C:/Users/zulst/Desktop/origin monte_carlo')
 import time
 from chess import Board
 from mctchess.players import Player
+from threading import Thread
+from mctchess.window.window import MainWindow
+from PyQt5.QtWidgets import QApplication
 
 class Game:
     def __init__(
@@ -22,7 +25,7 @@ class Game:
 
     def turn(self) -> bool:
         return self.board.turn
-
+    
     def compute_next_move(self) -> str:
         player = self.white_player if self.turn() else self.black_player
         move = player.play(self.board)
@@ -59,3 +62,13 @@ class Game:
 
         if self.verbose:
             print(f"Game ended with result: {self.board.result()}")
+
+    def run_game(self, showChoice: bool) -> None:
+        app = QApplication([])
+        window = MainWindow()
+        window.chessboard = self.board
+        if(showChoice):
+            window.show()
+        threadRunGame = Thread(target=self.play_game)
+        threadRunGame.start()
+        app.exec_()

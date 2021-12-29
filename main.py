@@ -1,4 +1,6 @@
 import sys
+
+from PyQt5.QtWidgets import QApplication
 sys.path.append('C:/Users/zulst/Desktop/origin monte_carlo')
 
 from time import time
@@ -10,6 +12,9 @@ from mctchess.players.minimax_player import MiniMaxPlayer
 from mctchess.players.random_player import RandomPlayer
 from mctchess.players.monte_carlo_player import MCPlayer
 
+from threading import Thread
+
+
 def test_n_games(p1: Player, p2: Player, n_games: int, verbose: bool = False) -> list:
     t0 = time()
     results = list()
@@ -20,7 +25,7 @@ def test_n_games(p1: Player, p2: Player, n_games: int, verbose: bool = False) ->
             if i % 2 == 0
             else Game(p2, p1, board, verbose=False)
         )
-        game.play_game()
+        game.run_game(True)
         outcome = board.outcome().winner
         if outcome is None:
             winner = "tie"
@@ -42,8 +47,10 @@ def test_n_games(p1: Player, p2: Player, n_games: int, verbose: bool = False) ->
     return results
 
 if __name__ == "__main__":
-
+    app = QApplication([])
     p1 = MiniMaxPlayer(depth=3, add_mobility=False, ab_pruning=True)
     p2 = RandomPlayer()
     p3 = MCPlayer(n_simulations=20, no_pools=1)
     results = test_n_games(p3, p1, n_games=1, verbose=True)
+    app.exec()
+    
