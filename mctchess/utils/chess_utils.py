@@ -5,9 +5,9 @@ from time import time
 from typing import List
 
 from chess import Board
+import chess.svg
 from mctchess.game.game import Game
 from mctchess.players import Player
-
 
 def get_random_move(board: Board) -> str:
     legal_moves = list(board.legal_moves)
