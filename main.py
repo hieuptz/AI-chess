@@ -1,6 +1,9 @@
 import sys
 
 from PyQt5.QtWidgets import QApplication
+
+from mctchess import window
+from mctchess.window.window import MainWindow
 sys.path.append('C:/Users/zulst/Desktop/origin monte_carlo')
 
 from time import time
@@ -15,17 +18,16 @@ from mctchess.players.monte_carlo_player import MCPlayer
 from threading import Thread
 
 
-def test_n_games(p1: Player, p2: Player, n_games: int, verbose: bool = False) -> list:
+def test_n_games(p1: Player, p2: Player, n_games: int, verbose: bool = False, board: Board = Board()) -> list:
     t0 = time()
     results = list()
     for i in range(n_games):
-        board = Board()
         game = (
             Game(p1, p2, board, verbose=False)
             if i % 2 == 0
             else Game(p2, p1, board, verbose=False)
         )
-        game.run_game(True)
+        game.play_game()
         outcome = board.outcome().winner
         if outcome is None:
             winner = "tie"
@@ -48,9 +50,16 @@ def test_n_games(p1: Player, p2: Player, n_games: int, verbose: bool = False) ->
 
 if __name__ == "__main__":
     app = QApplication([])
+    window = MainWindow()
     p1 = MiniMaxPlayer(depth=3, add_mobility=False, ab_pruning=True)
     p2 = RandomPlayer()
     p3 = MCPlayer(n_simulations=20, no_pools=1)
-    results = test_n_games(p3, p1, n_games=1, verbose=True)
-    app.exec()
+    board = Board()
+    window.chessboard = board
+    val = input("You want to show board (Y/N): ")
+    if(val == 'Y'):
+        window.show()
+    threadStartGame = Thread(target=test_n_games, args=(p3, p1,1,True, board))
+    threadStartGame.start()
+    app.exec_()
     

@@ -58,17 +58,9 @@ class Game:
             Time=(time.time()-start)
             print("Time for this move:", Time)
             if self.verbose and self.board.ply() % 20 == 0:
-                print(f"{self.board.ply()} turns played")
+                print(f"{self.board.ply()} turns played")  
 
         if self.verbose:
             print(f"Game ended with result: {self.board.result()}")
 
-    def run_game(self, showChoice: bool) -> None:
-        app = QApplication([])
-        window = MainWindow()
-        window.chessboard = self.board
-        if(showChoice):
-            window.show()
-        threadRunGame = Thread(target=self.play_game)
-        threadRunGame.start()
-        app.exec_()
+        
