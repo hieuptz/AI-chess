@@ -1,0 +1,106 @@
+White go
+b2b3
+Time for this move: 0.0009980201721191406
+Time average of white: 0.0009980201721191406
+Time average of black: 0
+Black go
+d7d5
+Time for this move: 0.1386265754699707
+Time average of white: 0.0009980201721191406
+Time average of black: 0.1386265754699707
+White go
+e2e4
+Time for this move: 0.000997781753540039
+Time average of white: 0.0009979009628295898
+Time average of black: 0.1386265754699707
+Black go
+d5e4
+Time for this move: 0.5864336490631104
+Time average of white: 0.0009979009628295898
+Time average of black: 0.3625301122665405
+White go
+c2c4
+Time for this move: 0.0
+Time average of white: 0.0006652673085530599
+Time average of black: 0.3625301122665405
+Black go
+d8d4
+Time for this move: 1.2995259761810303
+Time average of white: 0.0006652673085530599
+Time average of black: 0.6748620669047037
+White go
+c1a3
+Time for this move: 0.0
+Time average of white: 0.0004989504814147949
+Time average of black: 0.6748620669047037
+Black go
+d4a1
+Time for this move: 2.1732215881347656
+Time average of white: 0.0004989504814147949
+Time average of black: 1.0494519472122192
+White go
+g2g3
+Time for this move: 0.0
+Time average of white: 0.00039916038513183595
+Time average of black: 1.0494519472122192
+Black go
+a1a2
+Time for this move: 1.529881477355957
+Time average of white: 0.00039916038513183595
+Time average of black: 1.1455378532409668
+White go
+d1e2
+Time for this move: 0.0
+Time average of white: 0.00033263365427652997
+Time average of black: 1.1455378532409668
+Black go
+a2b1
+Time for this move: 1.2346961498260498
+Time average of white: 0.00033263365427652997
+Time average of black: 1.1603975693384807
+White go
+e2d1
+Time for this move: 0.0
+Time average of white: 0.00028511456080845425
+Time average of black: 1.1603975693384807
+Black go
+b1a2
+Time for this move: 1.0422141551971436
+Time average of white: 0.00028511456080845425
+Time average of black: 1.1435142244611467
+White go
+b3b4
+Time for this move: 0.0
+Time average of white: 0.00024947524070739746
+Time average of black: 1.1435142244611467
+Black go
+a2a3
+Time for this move: 1.1329729557037354
+Time average of white: 0.00024947524070739746
+Time average of black: 1.1421965658664703
+White go
+d1g4
+Time for this move: 0.0
+Time average of white: 0.00022175576951768663
+Time average of black: 1.1421965658664703
+Black go
+c8g4
+Time for this move: 1.0661847591400146
+Time average of white: 0.00022175576951768663
+Time average of black: 1.133750809563531
+White go
+f1d3
+Time for this move: 0.0
+Time average of white: 0.00019958019256591797
+Time average of black: 1.133750809563531
+Black go
+a3c1
+Time for this move: 0.9963552951812744
+Time average of white: 0.00019958019256591797
+Time average of black: 1.1200112581253052
+Finished in 0.187 mins
+
+Final Stats:
+	Player 1: 0
+	Tied games: 0
+	Player 2: 1
